@@ -2,7 +2,13 @@
 
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <article class="mb-8 bg-white shadow-lg rounded-lg overflow-hidden">
-        <img class="w-full h-72 object-cover object-center" src="{{url($post->image->url)}}" alt="">
+        @if ($post->image)
+            <img class="w-full h-72 object-cover object-center" src="{{url($post->image->url)}}" alt="">
+        @else
+
+            <img class="w-full h-72 object-cover object-center" src="https://cdn.pixabay.com/photo/2022/06/14/00/22/mountain-7260827_960_720.jpg" alt="">
+            
+        @endif
         <div class="px-6 py-4">
             <h1 class="font-bold text-xl mb-2">
                 <a href="{{route('posts.show' , $post)}}">{{$post->name}}</a>
@@ -10,7 +16,7 @@
             </h1>
 
             <div class="text-gray-700 text-base">
-                {{$post->extract}}
+                {!!$post->extract!!}
             </div>
 
         </div>
