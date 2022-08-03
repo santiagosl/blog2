@@ -251,6 +251,11 @@ return [
             'url'         => 'admin',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
         ],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-users -alt fa-fw',
+        ],
         ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Categorias',
