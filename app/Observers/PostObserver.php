@@ -7,12 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class PostObserver
 {
-    /**
-     * Handle the Post "created" event.
-     *
-     * @param  \App\Models\Post  $post
-     * @return void
-     */
+
     public function creating(Post $post)
     {
         if (! \App::runningInConsole()) {
@@ -20,12 +15,6 @@ class PostObserver
         }
     }
 
-    /**
-     * Handle the Post "deleted" event.
-     *
-     * @param  \App\Models\Post  $post
-     * @return void
-     */
     public function deleting(Post $post)
     {
         if($post->image){
