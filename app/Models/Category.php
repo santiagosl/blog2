@@ -17,6 +17,7 @@ class Category extends Model
         return "slug";
     }
 
+    //Relacion uno a muchos
     public function posts(){
         return $this->hasMany(Post::class);
     }
